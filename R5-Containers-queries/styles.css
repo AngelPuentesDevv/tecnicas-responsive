@@ -1,0 +1,78 @@
+/* ======== Estilos Generales ======== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 2rem;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+/* ======== Contenedor con Container Queries ======== */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem;
+    contain: inline-size;
+    /* Habilita container queries */
+    width: 100%;
+    /* Ajusta el ancho del contenedor */
+    max-width: 700px;
+    /* Cambia el ancho máximo del contenedor */
+    margin: 0 auto;
+    /* Centra el contenedor horizontalmente */
+}
+
+/* ======== Tarjetas ======== */
+.card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    width: 100%;
+    /* Predeterminado en móviles */
+    font-family: Arial, sans-serif;
+    /* Fuente predeterminada */
+}
+
+/* ======== Container Queries ======== */
+@container (max-width: 400px) {
+    .card {
+        width: 100%;
+        /* Ocupa el 100% del ancho si el contenedor es menor a 400px */
+        background-color: #0be616;
+        /* Cambia el color de fondo si el contenedor es menor a 400px */
+        font-family: 'Courier New', Courier, monospace;
+        /* Cambia la fuente */
+    }
+}
+
+@container (min-width: 600px) {
+    .card {
+        width: 50%;
+        /* Ocupa el 50% del ancho si el contenedor es mayor a 600px */
+        background-color: #a81010;
+        /* Cambia el color de fondo si el contenedor es mayor a 600px */
+        font-family: 'Times New Roman', Times, serif;
+        /* Cambia la fuente */
+    }
+}
+
+@container (min-width: 900px) {
+    .card {
+        width: calc(33.33% - 1rem);
+        /* Ocupa un tercio del ancho si el contenedor es mayor a 900px */
+        background-color: #8310b8;
+        /* Cambia el color de fondo si el contenedor es mayor a 900px */
+        font-family: 'Georgia', serif;
+        /* Cambia la fuente */
+    }
+}
+
+@container (min-width: 800px) {
+    .grid {
+        flex-direction: row;
+        /* Disposición en fila cuando el contenedor alcanza un tamaño mínimo de 800px */
+    }
+}
